@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page de Vote</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+      }
+      form {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="text"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Formulaire de Vote</h2>
+      <form action="/submit_vote" method="POST">
+        <label for="cin">CIN:</label>
+        <input type="text" id="cin" name="cin" required />
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required />
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" required />
+        <label for="date_naissance">Date de naissance:</label>
+        <input type="date" id="date_naissance" name="date_naissance" required />
+        <label for="vote">Vote:</label>
+        <select id="vote" name="vote" required>
+          <option value="candidat1">Candidat 1</option>
+          <option value="candidat2">Candidat 2</option>
+          <!-- Ajoutez plus d'options pour les candidats -->
+        </select>
+        <input type="submit" value="Soumettre le Vote" />
+      </form>
+    </div>
+  </body>
+</html>
